@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Space Dodgers</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="game-container">
+
+        <h1>SPACE DODGERS</h1>
+
+        <div class="hud">
+
+            <div class="hud-box">
+                SCORE
+                <span id="score">0</span>
+            </div>
+
+            <div class="hud-box">
+                LIVES
+                <span id="lives">3</span>
+            </div>
+
+            <div class="hud-box">
+                LEVEL
+                <span id="difficulty">1</span>
+            </div>
+
+        </div>
+
+        <canvas id="gameCanvas" width="320" height="480"></canvas>
+
+        <div class="buttons">
+            <button id="startButton">START</button>
+            <button id="pauseButton">PAUSE</button>
+        </div>
+
+        <div class="controls">
+            A/D: Move
+            <br>
+            SPACE: Shoot
+        </div>
+
+    </div>
+
+    <script src="game.js"></script>
+
+</body>
+
+</html>
