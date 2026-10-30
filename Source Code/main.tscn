@@ -1,0 +1,412 @@
+[gd_scene format=3 uid="uid://5x586c582ej2"]
+
+[ext_resource type="Script" uid="uid://dw32b0h0no0lk" path="res://main.gd" id="1_5vw27"]
+[ext_resource type="Script" uid="uid://bm06fhuuvx1l1" path="res://player.gd" id="1_272bh"]
+[ext_resource type="PackedScene" uid="uid://buvyoodxqt5iv" path="res://bullet.tscn" id="2_5vw27"]
+[ext_resource type="Script" uid="uid://c0uo55eey32xr" path="res://enemy_spawner.gd" id="3_kek77"]
+[ext_resource type="PackedScene" uid="uid://54ufdwbeyyll" path="res://enemy(level_1).tscn" id="4_4c57u"]
+[ext_resource type="PackedScene" uid="uid://dxm4otqoeeqvf" path="res://enemy(level_2).tscn" id="4_vivmo"]
+[ext_resource type="Script" uid="uid://duwqfbb5t4hvb" path="res://hud.gd" id="5_efxa6"]
+[ext_resource type="PackedScene" uid="uid://cdqtllf8euixh" path="res://enemy(level_3).tscn" id="5_yaehf"]
+[ext_resource type="FontFile" uid="uid://c84d3d0ilgp1q" path="res://fonts/Orbitron-VariableFont_wght.ttf" id="6_2cqfq"]
+[ext_resource type="PackedScene" uid="uid://b0toeuukl2nlx" path="res://enemy(level_4).tscn" id="6_074og"]
+[ext_resource type="Texture2D" uid="uid://cdosoxlkwoccr" path="res://assets/Main Ship - Base - Full health.png" id="6_dg77c"]
+[ext_resource type="PackedScene" uid="uid://cvtvqxowoolab" path="res://enemy(level_5).tscn" id="7_cegan"]
+[ext_resource type="Texture2D" uid="uid://b6ys5ej7p4r4b" path="res://assets/Main Ship - Engines - Base Engine - Powering.png" id="7_ycdy4"]
+[ext_resource type="PackedScene" uid="uid://cx32bgwi4ay6a" path="res://enemy(level_6).tscn" id="8_d13ii"]
+[ext_resource type="PackedScene" uid="uid://dqjxyb5mq0gsg" path="res://enemy(level_7).tscn" id="9_1u8w0"]
+[ext_resource type="Texture2D" uid="uid://dtdeqbd7nokl6" path="res://assets/spritsheet.png" id="9_kek77"]
+[ext_resource type="PackedScene" uid="uid://c13s5y6vqyytq" path="res://enemy(level_8).tscn" id="10_0odxb"]
+[ext_resource type="Texture2D" uid="uid://cforoi8pnkog4" path="res://assets/parallax-space-backgound.png" id="10_4c57u"]
+[ext_resource type="Texture2D" uid="uid://cd2p2fox7fj4f" path="res://assets/parallax-space-ring-planet.png" id="10_w48qg"]
+[ext_resource type="PackedScene" uid="uid://dljkk6sl7me15" path="res://enemy(level_9).tscn" id="11_lswn8"]
+[ext_resource type="Texture2D" uid="uid://semkur1tmcas" path="res://assets/parallax-space-big-planet.png" id="11_vivmo"]
+[ext_resource type="PackedScene" uid="uid://31yf3h1var2u" path="res://boss.tscn" id="12_1u8w0"]
+[ext_resource type="Texture2D" uid="uid://di55ta32orl5q" path="res://assets/parallax-space-far-planets.png" id="12_2cqfq"]
+[ext_resource type="Texture2D" uid="uid://dqre71v3wgr3r" path="res://assets/parallax-space-stars.png" id="13_yaehf"]
+[ext_resource type="Script" uid="uid://c3ck7nn7o7c6u" path="res://health_bar.gd" id="15_4k2k6"]
+[ext_resource type="FontFile" uid="uid://cjk2ky3s5nkgr" path="res://fonts/RussoOne-Regular.ttf" id="15_lswn8"]
+[ext_resource type="FontFile" uid="uid://gi2q5msnny3m" path="res://fonts/Micro5Charted-Regular.ttf" id="16_a6jrf"]
+[ext_resource type="Script" uid="uid://dcqymb7v3560o" path="res://audio_manager.gd" id="27_a6jrf"]
+[ext_resource type="AudioStream" uid="uid://lu6rlu0py8ob" path="res://music/MyVeryOwnDeadShip.ogg" id="28_seu75"]
+[ext_resource type="AudioStream" uid="uid://brrx4qyut11ui" path="res://sfx/explosion.wav" id="29_htxhm"]
+[ext_resource type="AudioStream" uid="uid://ov0i83wgt3d6" path="res://sfx/Chunky Explosion.mp3" id="30_jq2sk"]
+[ext_resource type="AudioStream" uid="uid://beo3g2aewmy26" path="res://sfx/SHOOT012.mp3" id="31_4k2k6"]
+[ext_resource type="AudioStream" uid="uid://wfsvkxycva22" path="res://sfx/Victory!.wav" id="32_htxhm"]
+[ext_resource type="AudioStream" uid="uid://bsrsc3dk263dv" path="res://sfx/game_over.wav" id="33_jq2sk"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1jxqw"]
+
+[sub_resource type="GDScript" id="GDScript_1jxqw"]
+script/source = "extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	pass
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_82xsv"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qsp4k"]
+bg_color = Color(0.4437906, 9.205006e-07, 1.6845763e-07, 0.96862745)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wp5od"]
+size = Vector2(30, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sweqy"]
+atlas = ExtResource("7_ycdy4")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hs0m"]
+atlas = ExtResource("7_ycdy4")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jxqw"]
+atlas = ExtResource("7_ycdy4")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dw050"]
+atlas = ExtResource("7_ycdy4")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j8rjh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sweqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hs0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jxqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dw050")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 24.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kek77"]
+atlas = ExtResource("9_kek77")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4c57u"]
+atlas = ExtResource("9_kek77")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efxa6"]
+atlas = ExtResource("9_kek77")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dg77c"]
+atlas = ExtResource("9_kek77")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycdy4"]
+atlas = ExtResource("9_kek77")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w48qg"]
+atlas = ExtResource("9_kek77")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vivmo"]
+atlas = ExtResource("9_kek77")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cqfq"]
+atlas = ExtResource("9_kek77")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yaehf"]
+atlas = ExtResource("9_kek77")
+region = Rect2(1024, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_074og"]
+atlas = ExtResource("9_kek77")
+region = Rect2(1152, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cegan"]
+atlas = ExtResource("9_kek77")
+region = Rect2(1280, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82xsv"]
+atlas = ExtResource("9_kek77")
+region = Rect2(1408, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4c57u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kek77")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4c57u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efxa6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dg77c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycdy4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w48qg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vivmo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cqfq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yaehf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_074og")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cegan")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82xsv")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="main" type="Node2D" unique_id=1065271102]
+script = ExtResource("1_5vw27")
+
+[node name="Enemy Spawner" type="Node2D" parent="." unique_id=1617028940 groups=["enemy_spawner"]]
+script = ExtResource("3_kek77")
+enemy_level_1_scene = ExtResource("4_4c57u")
+enemy_level_2_scene = ExtResource("4_vivmo")
+enemy_level_3_scene = ExtResource("5_yaehf")
+enemy_level_4_scene = ExtResource("6_074og")
+enemy_level_5_scene = ExtResource("7_cegan")
+enemy_level_6_scene = ExtResource("8_d13ii")
+enemy_level_7_scene = ExtResource("9_1u8w0")
+enemy_level_8_scene = ExtResource("10_0odxb")
+enemy_level_9_scene = ExtResource("11_lswn8")
+enemy_level_10_scene = ExtResource("12_1u8w0")
+enemies_per_wave = 7
+
+[node name="Enemy(level1)" parent="Enemy Spawner" unique_id=1847388591 instance=ExtResource("4_4c57u")]
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=671305739]
+script = ExtResource("5_efxa6")
+
+[node name="HighScoreLabel" type="Label" parent="HUD" unique_id=376238182]
+offset_right = 56.0
+offset_bottom = 23.0
+text = "BEST: 0"
+
+[node name="ScoreLabel" type="Label" parent="HUD" unique_id=2145821761]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -69.0
+offset_bottom = 23.0
+grow_horizontal = 0
+text = "SCORE: 0"
+
+[node name="HeartsLabel" type="Label" parent="HUD" unique_id=1023274510]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+horizontal_alignment = 1
+
+[node name="GameOverLabel" type="Label" parent="HUD" unique_id=1371790882]
+material = SubResource("CanvasItemMaterial_1jxqw")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.5
+offset_top = -24.5
+offset_right = 63.5
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_2cqfq")
+text = "GAME OVERRRR 
+Press SPACE "
+horizontal_alignment = 1
+script = SubResource("GDScript_1jxqw")
+
+[node name="HealthBar" type="ProgressBar" parent="HUD" unique_id=316486453]
+z_index = 2
+custom_maximum_size = Vector2(250, 24)
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 451.0
+offset_right = -451.0
+offset_bottom = 19.0
+grow_horizontal = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_82xsv")
+value = 100.0
+show_percentage = false
+script = ExtResource("15_4k2k6")
+
+[node name="DoubleShotTimerLabel" type="Label" parent="HUD" unique_id=53053565]
+visible = false
+offset_left = 1.0
+offset_top = 23.0
+offset_right = 41.0
+offset_bottom = 46.0
+
+[node name="BossHealthBar" type="ProgressBar" parent="HUD" unique_id=1401526102]
+visible = false
+z_index = 50
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -147.0
+offset_top = -179.0
+offset_right = -143.0
+offset_bottom = -152.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(74.9043, 0.7199975)
+theme_override_styles/fill = SubResource("StyleBoxFlat_qsp4k")
+max_value = 15000.0
+value = 15000.0
+show_percentage = false
+
+[node name="MedalLabel" type="Label" parent="HUD" unique_id=2050036868]
+visible = false
+offset_left = 113.0
+offset_top = -1.0
+offset_right = 153.0
+offset_bottom = 22.0
+text = "🎖️"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VictoryLabel" type="Label" parent="HUD" unique_id=1452092268]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -281.0
+offset_top = -91.0
+offset_right = 293.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("15_lswn8")
+theme_override_font_sizes/font_size = 44
+text = "CONGRATULATIONS GNG!!!"
+horizontal_alignment = 1
+
+[node name="NeverEndingLabel" type="Label" parent="HUD" unique_id=317242816]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -28.0
+offset_right = 96.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("16_a6jrf")
+theme_override_font_sizes/font_size = 26
+text = "ENDLESS MODE"
+horizontal_alignment = 1
+
+[node name="player" type="CharacterBody2D" parent="." unique_id=1800809271]
+collision_mask = 2
+script = ExtResource("1_272bh")
+bullet_scene = ExtResource("2_5vw27")
+
+[node name="ship" type="Sprite2D" parent="player" unique_id=1833547013]
+texture = ExtResource("6_dg77c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=1680413577]
+shape = SubResource("RectangleShape2D_wp5od")
+
+[node name="engine flame" type="AnimatedSprite2D" parent="player" unique_id=1917139815]
+sprite_frames = SubResource("SpriteFrames_j8rjh")
+frame_progress = 0.3281124
+
+[node name="MainShipEnginesBaseEnginePowering" type="Sprite2D" parent="player/engine flame" unique_id=1138533048]
+visible = false
+position = Vector2(102, -88)
+texture = ExtResource("7_ycdy4")
+offset = Vector2(1, -7)
+
+[node name="player_explosion" type="AnimatedSprite2D" parent="player" unique_id=371425523]
+visible = false
+position = Vector2(0, -37)
+sprite_frames = SubResource("SpriteFrames_4c57u")
+
+[node name="Sprite2D" type="Sprite2D" parent="player/player_explosion" unique_id=64529424]
+visible = false
+texture = ExtResource("9_kek77")
+
+[node name="background" type="Node2D" parent="." unique_id=866531661]
+z_index = -1000
+position = Vector2(466, -559)
+scale = Vector2(4.2784324, -4.5007486)
+
+[node name="space-ring-planet" type="Sprite2D" parent="background" unique_id=784398427]
+position = Vector2(-46.999985, -214.99997)
+rotation = -0.9197273
+texture = ExtResource("10_w48qg")
+
+[node name="planet" type="Sprite2D" parent="background" unique_id=2134132238]
+position = Vector2(114.000015, -230.99997)
+texture = ExtResource("11_vivmo")
+
+[node name="far-planets" type="Sprite2D" parent="background" unique_id=1127391590]
+position = Vector2(-10.999985, -132.99997)
+texture = ExtResource("12_2cqfq")
+
+[node name="stars" type="Sprite2D" parent="background" unique_id=2017235689]
+z_index = -90
+position = Vector2(7.0000153, -198.99997)
+texture = ExtResource("13_yaehf")
+
+[node name="space" type="Sprite2D" parent="background" unique_id=525663774]
+z_index = -100
+position = Vector2(28.000015, -199.99997)
+scale = Vector2(1.0533823, 1)
+texture = ExtResource("10_4c57u")
+
+[node name="Background Music" type="AudioStreamPlayer2D" parent="." unique_id=1116332378]
+
+[node name="AudioManager" type="Node" parent="." unique_id=215475399]
+script = ExtResource("27_a6jrf")
+background_music = ExtResource("28_seu75")
+regular_explosion = ExtResource("29_htxhm")
+boss_explosion = ExtResource("30_jq2sk")
+shooting_sound = ExtResource("31_4k2k6")
+victory_sound = ExtResource("32_htxhm")
+loss_sound = ExtResource("33_jq2sk")

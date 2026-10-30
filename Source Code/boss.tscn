@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://31yf3h1var2u"]
+
+[ext_resource type="Texture2D" uid="uid://3ny16o8xtaxx" path="res://assets/Enemy_boss.png" id="1_6xxrv"]
+[ext_resource type="Script" uid="uid://gi8ksvk03y3j" path="res://boss.gd" id="1_skx2t"]
+[ext_resource type="PackedScene" uid="uid://xylbjy217p7m" path="res://boss_explosion.tscn" id="2_lnbgr"]
+[ext_resource type="Texture2D" uid="uid://dax0bkrs6k1c4" path="res://assets/Main Ship - Engines - Supercharged Engine - Spritesheet.png" id="2_skx2t"]
+[ext_resource type="PackedScene" uid="uid://chi61a54j4ejs" path="res://boss_projectile.tscn" id="2_we8h1"]
+[ext_resource type="PackedScene" uid="uid://did85kaigbdyc" path="res://boss_telegraph.tscn" id="3_kvofc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnbgr"]
+atlas = ExtResource("2_skx2t")
+region = Rect2(0, 24, 48, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1i15"]
+atlas = ExtResource("2_skx2t")
+region = Rect2(48, 24, 48, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_we8h1"]
+atlas = ExtResource("2_skx2t")
+region = Rect2(96, 24, 48, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvofc"]
+atlas = ExtResource("2_skx2t")
+region = Rect2(144, 24, 48, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ef0k6"]
+atlas = ExtResource("2_skx2t")
+region = Rect2(0, 72, 48, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ry61v"]
+atlas = ExtResource("2_skx2t")
+region = Rect2(48, 72, 48, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kles1"]
+atlas = ExtResource("2_skx2t")
+region = Rect2(96, 72, 48, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_etj48"]
+atlas = ExtResource("2_skx2t")
+region = Rect2(144, 72, 48, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wp5od"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnbgr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o1i15")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_we8h1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvofc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ef0k6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ry61v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kles1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_etj48")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 24.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wp5od"]
+size = Vector2(197, 475)
+
+[node name="Boss" type="Area2D" unique_id=1883652090]
+collision_layer = 2
+script = ExtResource("1_skx2t")
+projectile_scene = ExtResource("2_we8h1")
+telegraph_scene = ExtResource("3_kvofc")
+explosion_scene = ExtResource("2_lnbgr")
+
+[node name="BossSprite" type="Sprite2D" parent="." unique_id=994689711]
+position = Vector2(8, 32.999992)
+rotation = 1.5700531
+scale = Vector2(4.036178, 3.661948)
+texture = ExtResource("1_6xxrv")
+
+[node name="EngineFlame" type="AnimatedSprite2D" parent="." unique_id=1126230803]
+position = Vector2(-1.9999981, -99)
+rotation = -3.139346
+scale = Vector2(3.4703717, 11.89237)
+sprite_frames = SubResource("SpriteFrames_wp5od")
+frame_progress = 0.5233782
+
+[node name="MainShipEnginesSuperchargedEngineSpritesheet" type="Sprite2D" parent="EngineFlame" unique_id=640637679]
+visible = false
+position = Vector2(500, 109)
+texture = ExtResource("2_skx2t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=822035733]
+position = Vector2(-0.5, -34.5)
+shape = SubResource("RectangleShape2D_wp5od")

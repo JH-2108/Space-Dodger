@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b0whb6vy5rd6q"]
+
+[ext_resource type="Script" uid="uid://bkkto4mceb162" path="res://double_shot_power_up.gd" id="1_kx26o"]
+[ext_resource type="Texture2D" uid="uid://d3jws0gc0jqi6" path="res://assets/New Piskel.png" id="2_rxqlq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kx26o"]
+radius = 14.0
+
+[node name="DoubleShotPowerUp" type="Area2D" unique_id=419688801]
+script = ExtResource("1_kx26o")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1294601244]
+texture = ExtResource("2_rxqlq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=498971775]
+shape = SubResource("CircleShape2D_kx26o")

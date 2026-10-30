@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://chi61a54j4ejs"]
+
+[ext_resource type="Script" uid="uid://8adbvspw4ggm" path="res://boss_projectile.gd" id="1_l2kl3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_711sb"]
+radius = 20.024984
+
+[node name="BossProjectile" type="Area2D" unique_id=1578243151]
+script = ExtResource("1_l2kl3")
+
+[node name="Visual" type="Polygon2D" parent="." unique_id=1678974416]
+position = Vector2(-4, 0)
+scale = Vector2(0.5199998, 0.43999898)
+color = Color(1, 0.19215687, 0.011764706, 1)
+polygon = PackedVector2Array(15.199982, -78.799995, -74.399994, -0.40000153, 0, 72.4, 88.79999, 1.2000046)
+uv = PackedVector2Array(15.199982, -78.799995, -74.399994, -0.40000153, 0, 72.4, 88.79999, 1.2000046)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=304330365]
+shape = SubResource("CircleShape2D_711sb")

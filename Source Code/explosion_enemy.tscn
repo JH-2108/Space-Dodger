@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://b80228ttdm4c8"]
+
+[ext_resource type="Script" uid="uid://b6ao81t4c4ls0" path="res://explosion_enemy.gd" id="1_ed3sd"]
+[ext_resource type="Texture2D" uid="uid://b4vtyo5e3hil0" path="res://assets/spritesheet.png" id="2_pje0g"]
+[ext_resource type="Texture2D" uid="uid://dtdeqbd7nokl6" path="res://assets/spritsheet.png" id="3_0jomo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5xho"]
+atlas = ExtResource("2_pje0g")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmxf7"]
+atlas = ExtResource("2_pje0g")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l04k4"]
+atlas = ExtResource("2_pje0g")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cf70p"]
+atlas = ExtResource("2_pje0g")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xjsk"]
+atlas = ExtResource("2_pje0g")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjpps"]
+atlas = ExtResource("2_pje0g")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ew515"]
+atlas = ExtResource("2_pje0g")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6cxdk"]
+atlas = ExtResource("2_pje0g")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wp5od"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m5xho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kmxf7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l04k4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cf70p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xjsk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjpps")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ew515")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6cxdk")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="explosion_enemy" type="Node2D" unique_id=875522697]
+script = ExtResource("1_ed3sd")
+
+[node name="explosion_enemy" type="AnimatedSprite2D" parent="." unique_id=613578795]
+sprite_frames = SubResource("SpriteFrames_wp5od")
+
+[node name="Spritsheet" type="Sprite2D" parent="explosion_enemy" unique_id=2003335135]
+visible = false
+position = Vector2(591, 251)
+texture = ExtResource("3_0jomo")
