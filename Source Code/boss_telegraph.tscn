@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://did85kaigbdyc"]
+
+[ext_resource type="Script" uid="uid://dd8o8vx3c01ri" path="res://boss_telegraph.gd" id="1_jxjam"]
+
+[node name="BossTelegraph" type="Node2D" unique_id=352384284]
+script = ExtResource("1_jxjam")
+
+[node name="WarningSquare" type="Polygon2D" parent="." unique_id=478082120]
+color = Color(0.3529412, 0, 0, 0.7294118)

@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://54ufdwbeyyll"]
+
+[ext_resource type="Script" uid="uid://co12hvobhygbs" path="res://enemy(level_1).gd" id="1_ymmx3"]
+[ext_resource type="PackedScene" uid="uid://bgp5lc5ybf006" path="res://enemy_bullet.tscn" id="2_fk1im"]
+[ext_resource type="Texture2D" uid="uid://3cx14vqei6im" path="res://assets/e9.png" id="2_ybjd4"]
+[ext_resource type="PackedScene" uid="uid://b80228ttdm4c8" path="res://explosion_enemy.tscn" id="3_fk1im"]
+[ext_resource type="PackedScene" uid="uid://c2aa3pb2dvti6" path="res://health_power_up.tscn" id="4_35fjc"]
+[ext_resource type="PackedScene" uid="uid://8aoh2pj6ds2r" path="res://rapid_fire_power_up.tscn" id="5_uwtlw"]
+[ext_resource type="PackedScene" uid="uid://b0whb6vy5rd6q" path="res://double_shot_power_up.tscn" id="6_uwtlw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wp5od"]
+size = Vector2(15, 24)
+
+[node name="Enemy(level1)" type="Area2D" unique_id=1847388591]
+collision_layer = 2
+script = ExtResource("1_ymmx3")
+enemy_bullet_scene = ExtResource("2_fk1im")
+explosion_scene = ExtResource("3_fk1im")
+health_powerup_scene = ExtResource("4_35fjc")
+rapid_fire_powerup_scene = ExtResource("5_uwtlw")
+double_shot_powerup_scene = ExtResource("6_uwtlw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1237074361]
+rotation = 1.5768145
+texture = ExtResource("2_ybjd4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1334591159]
+position = Vector2(-0.5, -8)
+shape = SubResource("RectangleShape2D_wp5od")
