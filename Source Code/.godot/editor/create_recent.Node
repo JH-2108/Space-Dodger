@@ -1,0 +1,14 @@
+Node
+AudioStreamPlayer2D
+Label
+Polygon2D
+Node2D
+Area2D
+CollisionShape2D
+AnimatedSprite2D
+ProgressBar
+Sprite2D
+GPUParticlesAttractorVectorField3D
+CharacterBody2D
+CanvasLayer
+AnimationPlayer
